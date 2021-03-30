@@ -9,9 +9,18 @@ package org.lql.tree;
  * @version: 1.0 <br>
  * @since: 2021/3/30 15:52 <br>
  */
-public class BinaryNode {
+public class BinaryNode<E> {
+    BinaryNode(E e) {
+        this(e, null, null);
+    }
 
-    Object element;
-    BinaryNode left;
-    BinaryNode right;
+    BinaryNode(E e, BinaryNode<E> lt, BinaryNode<E> rt) {
+        // 嵌套类的时候取值
+        // element = theElement;
+        left = lt;
+        right = rt;
+    }
+    E element;
+    BinaryNode<E> left;
+    BinaryNode<E> right;
 }
