@@ -3,6 +3,7 @@ package org.lql.collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Spliterator;
+import java.util.Stack;
 import java.util.function.Consumer;
 
 /**
