@@ -109,6 +109,31 @@ public class BinarySearchTree<E extends Comparable<? super E>> {
         return t;
     }
 
+    public void printTree() {
+        if (this.isEmpty()) {
+            System.out.println("Empty tree");
+        }else {
+            this.printTree(this.root);
+        }
+    }
+
+    public int height(BinaryNode<E> e) {
+        if (e == null) {
+            return -1;
+        }else {
+            return 1 + Math.max(height(e.left), height(e.right));
+        }
+    }
+
+    private void printTree(BinaryNode<E> t) {
+        if (t != null) {
+            this.printTree(t.left);
+            System.out.println(t.element);
+            this.printTree(t.right);
+        }
+    }
+
+
     /**
      * description: 查找最大值朝右子节点进行 <br>
      *
