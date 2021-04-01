@@ -98,7 +98,21 @@ public class SeparateChainingHashTable<E> {
     }
 
     public void rehash() {
+        List<E>[] oldLists = this.theLists;
 
+        //创建一个新的容量为两倍的表
+        this.theLists = new List[nextPrime(2 * this.theLists.length)];
+        for (int j = 0; j < this.theLists.length; j++) {
+            this.theLists[j] = new LinkedList<>();
+        }
+
+        // 复制元素
+        this.currentSize = 0;
+        for (int i = 0; i < oldLists.length; i++) {
+            for (E item : oldLists[i]) {
+                this.insert(item);
+            }
+        }
     }
 
     private int myhash(E e) {
@@ -113,11 +127,48 @@ public class SeparateChainingHashTable<E> {
         return hashVal;
     }
 
+    /**
+     * description: 生产下一个素数 <br>
+     *
+     * @author: leiql <br>
+     * @version: 1.0 <br>
+     * @since: 2021/4/1 22:12 <br>
+     *
+     * @throws
+    * @param n
+     * @return int
+     */
     private static int nextPrime(int n) {
-
+        while(isPrime(++n)) {}
+        return n;
     }
 
+    /**
+     * description: 判断是否是素数 <br>
+     *
+     * @author: leiql <br>
+     * @version: 1.0 <br>
+     * @since: 2021/4/1 22:12 <br>
+     *
+     * @throws
+    * @param n
+     * @return boolean
+     */
     private static boolean isPrime(int n) {
-
+        if (n < 2) {
+            return false;
+        } else if (n > 2) {
+            if(n%2==0) {
+                return false ;
+            }else {
+                int len = (int) Math.sqrt(n);
+                for(int i=3 ; i < len ;i++) {
+                    if(n%i==0) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 }
