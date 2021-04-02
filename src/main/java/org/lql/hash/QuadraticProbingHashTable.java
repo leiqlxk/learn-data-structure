@@ -1,5 +1,7 @@
 package org.lql.hash;
 
+import java.lang.annotation.ElementType;
+
 /**
  * Title: QuadraticProbingHashTable <br>
  * ProjectName: learn-data-structure <br>
@@ -116,7 +118,16 @@ public class QuadraticProbingHashTable<E> {
     }
 
     private void rehash() {
+        HashEntry<E>[] oldArray = this.array;
 
+        this.allocateArray(nextPrime(2 * oldArray.length));
+        this.currentSize = 0;
+
+        for (int i = 0; i < oldArray.length; i++) {
+            if (oldArray[i] != null && oldArray[i].isActive) {
+                this.insert(oldArray[i].element);
+            }
+        }
     }
 
     private int myhash(E e) {
