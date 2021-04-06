@@ -9,7 +9,7 @@ package org.lql.sort;
  * @version: 1.0 <br>
  * @since: 2021/4/2 17:04 <br>
  */
-public class InsertSort<E> {
+public class InsertSort {
 
     public static <E extends Comparable<? super E>> void insertSort(E[] a) {
         int j;
