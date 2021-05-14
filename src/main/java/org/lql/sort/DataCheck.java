@@ -41,7 +41,9 @@ public class DataCheck {
 
 //        BubbleSort.optimSort(copyArr);
 
-        InsertionSort.sort(copyArr);
+//        InsertionSort.sort(copyArr);
+
+        InsertionSort.optimSort(copyArr);
         for (int i = 0; i < arr.length; i++) {
             same = arr[i] == copyArr[i];
         }
