@@ -3,7 +3,7 @@ package org.lql.sort;
 /**
  * Title: SelectionSort <br>
  * ProjectName: learn-data-structure <br>
- * description: 选择排序   不稳定   时间复杂度：O(n*n) 空间复杂度：O(1) <br>
+ * description: 选择排序   不稳定   时间复杂度：O(n*n) 最好：O(n*n) 最坏：O(n*n) 空间复杂度：O(1) <br>
  *
  * @author: leiql <br>
  * @version: 1.0 <br>
@@ -33,12 +33,19 @@ public class SelectionSort {
         }
     }
 
-    /*public static void optimSelectionSort(int[] arr) {
-        for (int i = 0; i < (arr.length - 1) / 2; i++) {
-            int minPos = i;
-            int maxPos = i;
+    public static void optimSelectionSort(int[] arr) {
+        int left, right;
+        left = 0;
+        right = arr.length - 1;
 
-            for (int j = i + 1; j < arr.length - i; j++) {
+        int minPos = left;
+        int maxPos = right;
+
+        while (left < right) {
+            minPos = left;
+            maxPos = right;
+
+            for (int j = left; j <= right; j++) {
                 if (arr[j] < arr[minPos]) {
                     minPos = j;
                 }
@@ -48,12 +55,24 @@ public class SelectionSort {
                 }
             }
 
-            SelectionSort.swap(arr, i, minPos);
-            SelectionSort.swap(arr, arr.length - i - 1, maxPos);
-        }
-    }*/
+            if (minPos == left && maxPos == right) {
+                // 就是原本位置，什么都不做
+            }else if (minPos == right && maxPos == left) {
+                // 就是头尾两个位置，交换一次即可
+                SelectionSort.swap(arr, minPos, left);
+            }else {
+                // 交换两次
+                SelectionSort.swap(arr, minPos, left);
+                SelectionSort.swap(arr, maxPos, right);
+            }
 
-    private static void swap(int[] arr, int i, int j) {
+            // left和right向中间移动
+            left++;
+            right--;
+        }
+    }
+
+    public static void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;

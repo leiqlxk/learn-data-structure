@@ -33,7 +33,15 @@ public class DataCheck {
         boolean same = true;
 
         Arrays.sort(arr);
-        SelectionSort.selectionSort(copyArr);
+//         SelectionSort.selectionSort(copyArr);
+
+//        SelectionSort.optimSelectionSort(copyArr);
+
+//        BubbleSort.sort(copyArr);
+
+//        BubbleSort.optimSort(copyArr);
+
+        InsertionSort.sort(copyArr);
         for (int i = 0; i < arr.length; i++) {
             same = arr[i] == copyArr[i];
         }
@@ -44,9 +52,14 @@ public class DataCheck {
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < 10000; i++) {
+        long begin = System.currentTimeMillis();
+
+        for (int i = 0; i < 500; i++) {
             DataCheck.check();
         }
+
+        long end = System.currentTimeMillis();
+        System.out.println("完成时间时间：" + (end - begin) + "(ms)");
 
     }
 }
