@@ -1,5 +1,7 @@
 package org.lql.sort;
 
+import jdk.nashorn.tools.Shell;
+
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Random;
@@ -44,6 +46,11 @@ public class DataCheck {
 //        InsertionSort.sort(copyArr);
 
         InsertionSort.optimSort(copyArr);
+
+//        ShellSort.sort(copyArr);
+
+//        ShellSort.knuthSort(copyArr);
+
         for (int i = 0; i < arr.length; i++) {
             same = arr[i] == copyArr[i];
         }
