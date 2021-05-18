@@ -3,7 +3,7 @@ package org.lql.sort;
 /**
  * Title: ShellSort <br>
  * ProjectName: learn-data-structure <br>
- * description: 希尔排序 <br>
+ * description: 希尔排序  不稳定  时间复杂度：O(n^1.3)  最坏：O(n^2) 最好：O(n)  空间复杂度：O(1)<br>
  *
  * @author: leiql <br>
  * @version: 1.0 <br>

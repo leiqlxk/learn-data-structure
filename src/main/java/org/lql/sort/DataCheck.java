@@ -45,11 +45,13 @@ public class DataCheck {
 
 //        InsertionSort.sort(copyArr);
 
-        InsertionSort.optimSort(copyArr);
+//        InsertionSort.optimSort(copyArr);
 
 //        ShellSort.sort(copyArr);
 
 //        ShellSort.knuthSort(copyArr);
+
+        MergeSort.merge(copyArr, 0, copyArr.length - 1);
 
         for (int i = 0; i < arr.length; i++) {
             same = arr[i] == copyArr[i];

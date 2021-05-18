@@ -3,7 +3,7 @@ package org.lql.sort;
 /**
  * Title: InsertionSort <br>
  * ProjectName: learn-data-structure <br>
- * description: 插入排序  稳定  时间复杂度：O(n*n)  最坏：O(n*n)  最好：O(n)  空间复杂度：O(1) <br>
+ * description: 插入排序  稳定  时间复杂度：O(n^2)  最坏：O(n^2)  最好：O(n)  空间复杂度：O(1) <br>
  *
  * @author: leiql <br>
  * @version: 1.0 <br>
