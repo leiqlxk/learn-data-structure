@@ -51,8 +51,9 @@ public class DataCheck {
 
 //        ShellSort.knuthSort(copyArr);
 
-        MergeSort.merge(copyArr, 0, copyArr.length - 1);
+//        MergeSort.merge(copyArr, 0, copyArr.length - 1);
 
+        QuickSort.sort(copyArr, 0, copyArr.length - 1);
         for (int i = 0; i < arr.length; i++) {
             same = arr[i] == copyArr[i];
         }
