@@ -17,9 +17,8 @@ public class CountSort {
         int[] arr = {6, 5, 2, 4, 7, 1, 3, 9, 8, 3, 4, 6, 2, 6, 1, 8, 7};
 
         int[] result = CountSort.sort(arr);
-        CountSort.print(arr);
-        System.out.println();
-        CountSort.print(result);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(result));
     }
 
     public static int[] sort(int[] arr) {
@@ -41,17 +40,5 @@ public class CountSort {
         }
 
         return result;
-    }
-
-    public static void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
-    }
-
-    public static void print(int[] arr) {
-        for (int j : arr) {
-            System.out.print(j + " ");
-        }
     }
 }
